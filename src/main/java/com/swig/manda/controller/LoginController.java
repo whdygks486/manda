@@ -48,8 +48,7 @@ public class LoginController {
    @GetMapping("/login")
     public ResponseEntity<Object> getAllMainTopics() {
 
-        return ResponseEntity.badRequest().body("로그인 폼 입니다.");
-
+return ResponseEntity.ok().body("기본 로그인 폼 입니다.");
     }
 
     // 비밀번호 찾기 요청
