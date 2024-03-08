@@ -59,7 +59,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/member/**").permitAll()
                         .anyRequest().permitAll())
                 .oauth2Login(oauth2 -> oauth2
-                        .loginPage("/member/login")
+                        .loginPage("/api/member/login")
                         .defaultSuccessUrl("/member/loginSuccess")
                         .userInfoEndpoint(userInfo -> userInfo.userService(principalOauth2UserService)))
                 .logout(logout -> logout
