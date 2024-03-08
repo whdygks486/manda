@@ -45,7 +45,11 @@ public class LoginController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
+   @GetMapping("/login")
+    public ResponseEntity<Object> getAllMainTopics() {
 
+return ResponseEntity.ok().body("기본 로그인 폼 입니다.");
+    }
 
     // 비밀번호 찾기 요청
     @PostMapping("/check/findPw")
