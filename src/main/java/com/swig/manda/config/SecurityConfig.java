@@ -55,8 +55,9 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(HttpMethod.POST, "/api/member/login","/api/member/check/find_username","/api/member/check/findPw","/api/member/pwUpdate").permitAll()
-                        .requestMatchers("/api/member/**").authenticated()
+                        .requestMatchers(HttpMethod.POST, "/api/member/login", "/api/member/check/find_username",
+                                "/api/member/check/findPw", "/api/member/pwUpdate", "/member/**").permitAll()
+                        .requestMatchers("/members/**","/api/member/logout").authenticated()
                         .anyRequest().permitAll())
                 .oauth2Login(oauth2 -> oauth2
                         .loginPage("/member/login")
